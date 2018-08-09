@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Commvoy</string>
+    <string name="title_activity_maps">CommvoyMap</string>
+</resources>

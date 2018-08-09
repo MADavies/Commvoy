@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "34986926738",
+    "firebase_url": "https://commvoy.firebaseio.com",
+    "project_id": "commvoy",
+    "storage_bucket": "commvoy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34986926738:android:d6d5b2ca57ea609a",
+        "android_client_info": {
+          "package_name": "com.madsoftware.commvoy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34986926738-np0o5e6sai21o1v7cqcgljsfdpsvdmag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madsoftware.commvoy",
+            "certificate_hash": "0404291abf0aae87666b6682dd0222f107f048a6"
+          }
+        },
+        {
+          "client_id": "34986926738-pncq0i9uspo1cs7knr5nq2j8iu1nb904.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIrtzvLudmxeYidlu5x0EX75GMNGeg9WM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34986926738-pncq0i9uspo1cs7knr5nq2j8iu1nb904.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
