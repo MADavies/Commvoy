@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.madsoftware.commvoy;
+package com.madsoftware.commvoy.auto;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

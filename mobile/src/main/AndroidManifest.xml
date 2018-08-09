@@ -35,37 +35,42 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+        <activity
+            android:name=".authentication.LoginActivity"
+            android:label="@string/title_activity_login"/>
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"/>
+
+        <!-- Android Auto -->
 
         <meta-data
             android:name="com.google.android.gms.car.application"
             android:resource="@xml/automotive_app_desc" />
 
-        <service android:name=".CommvoyMessageService" />
+        <service android:name=".auto.CommvoyMessageService" />
 
-        <receiver android:name=".MessageReadReceiver">
+        <receiver android:name=".auto.MessageReadReceiver">
             <intent-filter>
                 <action android:name="com.madsoftware.commvoy.ACTION_MESSAGE_READ" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".MessageReplyReceiver">
+        <receiver android:name=".auto.MessageReplyReceiver">
             <intent-filter>
                 <action android:name="com.madsoftware.commvoy.ACTION_MESSAGE_REPLY" />
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+        <!-- /Android Auto -->
     </application>
 
 </manifest>

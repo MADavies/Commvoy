@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.madsoftware.commvoy;
+package com.madsoftware.commvoy.auto;
 
 import android.app.PendingIntent;
 import android.app.Service;
