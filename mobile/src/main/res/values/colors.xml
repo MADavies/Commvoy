@@ -6,4 +6,7 @@
     <color name="commvoyMainColour">#ff7c30</color>
     <color name="commvoyMainColourDark">#c25f25</color>
     <color name="commvoyAccent">#ff7c30</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#727272</color>
+    <color name="backgroundWhite">#F2F2F2</color>
 </resources>
