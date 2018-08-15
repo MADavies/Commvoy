@@ -20,4 +20,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_create_commvoy">Create</string>
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBi2XsA1yrK8ug8nL6dQ8FDwZyfMJAFHO8</string>
 </resources>

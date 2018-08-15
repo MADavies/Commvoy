@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/action_item1"
-        android:icon="@mipmap/baseline_add_black_18dp"
+        android:id="@+id/action_create"
+        android:icon="@mipmap/ic_action_add_box_dark"
         android:title="@string/title_create_commvoy"/>
 </menu>

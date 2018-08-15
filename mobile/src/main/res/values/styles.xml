@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/commvoyMainColour</item>
         <item name="colorPrimaryDark">@color/commvoyMainColourDark</item>
@@ -9,5 +9,7 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
     </style>
+
+    <style name="CommvoyToolbarTheme" parent="Theme.AppCompat.NoActionBar"/>
 
 </resources>
