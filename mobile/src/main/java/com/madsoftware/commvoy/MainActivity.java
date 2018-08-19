@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -17,7 +18,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.Window;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -26,14 +28,19 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.madsoftware.commvoy.authentication.LoginActivity;
 import com.madsoftware.commvoy.maps.MapsService;
+import com.madsoftware.commvoy.profile.ProfileActivity;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap map;
     private MapsService mService;
     private FusedLocationProviderClient mFusedLocationClient;
+    private MainController controller;
 
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
+
+    private ImageButton toolbarProfileButton;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -53,7 +60,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar mainToolBar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(mainToolBar);
+
+        controller = new MainController();
 
         //instantiate bottom nav view
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.MainBottonNav);
@@ -66,6 +74,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        toolbarProfileButton = (ImageButton) findViewById(R.id.Toolbar_profile_button);
+        toolbarProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(controller.isUserLoggedIn()) {
+                    //go to the Profile activity
+                    Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+                    startActivity(i);
+                    finish();
+                } else {
+                    //go to the Login activity
+                    Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            }
+        });
     }
 
     @Override
