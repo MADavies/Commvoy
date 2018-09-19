@@ -83,12 +83,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     //go to the Profile activity
                     Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
                     startActivity(i);
-                    finish();
                 } else {
                     //go to the Login activity
                     Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(i);
-                    finish();
                 }
             }
         });
@@ -117,8 +115,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             location = locationManager
                     .getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+
+            if(location != null) {
+                LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+            }
+
             return;
         }
 

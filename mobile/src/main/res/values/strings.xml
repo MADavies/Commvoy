@@ -114,4 +114,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    
+    <string name="clientId">34986926738-pncq0i9uspo1cs7knr5nq2j8iu1nb904.apps.googleusercontent.com</string>
 </resources>
