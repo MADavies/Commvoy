@@ -1,17 +1,14 @@
 package com.madsoftware.commvoy.authentication
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.madsoftware.commvoy.profile.ProfileActivity
-import android.support.v4.app.ActivityCompat.startActivityForResult
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 
 
 class LoginController(val activity: Activity) {
@@ -55,12 +52,15 @@ class LoginController(val activity: Activity) {
         }
     }
 
-    fun googleSignIn(context: Context, gso: GoogleSignInOptions) : Intent {
-        return Intent()
-    }
-
+    /**
+     * gets Google sign in options
+     */
     fun getSignInOptions(clientId: String) : GoogleSignInOptions {
         return loginService.buildGoogleSignInOptions(clientId)
+    }
+
+    fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        loginService.signInWithGoogle(acct, activity)
     }
 
     fun facebookSignIn() {

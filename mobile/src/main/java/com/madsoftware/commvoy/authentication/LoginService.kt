@@ -1,9 +1,17 @@
 package com.madsoftware.commvoy.authentication
 
+import android.app.Activity
+import android.support.design.widget.Snackbar
+import android.util.Log
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+
 
 
 
@@ -33,5 +41,20 @@ class LoginService {
                 .requestIdToken(clientId)
                 .requestEmail()
                 .build()
+    }
+
+    fun signInWithGoogle(acct: GoogleSignInAccount, activity: Activity) {
+        val credential : AuthCredential = GoogleAuthProvider.getCredential(acct.idToken, null)
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(activity, OnCompleteListener<AuthResult> {
+                    if(it.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("Login", "signInWithCredential:success")
+                        val user = mAuth.currentUser
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("Login", "signInWithCredential:failure", it.exception)
+                    }
+                })
     }
 }

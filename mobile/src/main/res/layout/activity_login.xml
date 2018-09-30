@@ -82,6 +82,14 @@
                 android:text="@string/action_register"
                 android:textStyle="bold" />
 
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/google_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:text="Text"
+                android:textSize="18sp" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
